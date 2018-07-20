@@ -37,7 +37,7 @@
       <Row>
         <Card>
           <div class="step-header-con">
-            <h3 style="margin-left: 35%">Yearning SQL平台审核工单</h3>
+            <h3 style="margin-left: 35%">微脉 SQL平台审核工单</h3>
           </div>
           <p class="step-content"></p>
           <Form class="step-form" :label-width="100">
@@ -137,7 +137,7 @@ export default {
         axios.post(`${util.url}/detail/`, {'opid': JSON.stringify(opid), 'id': this.$route.query.id})
         .then(res => {
           this.formItem = res.data.data
-          this.formItem.backup = '0'
+          this.formItem.backup = '1'
           this.ddlsql = res.data.sql
           this.sqltype = res.data.type
           this.reloadsql = true

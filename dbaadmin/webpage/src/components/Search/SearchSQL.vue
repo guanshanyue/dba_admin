@@ -245,7 +245,7 @@
       },
       exportdata () {
         exportcsv({
-          filename: 'Yearning_Data',
+          filename: '微脉_Data',
           original: false,
           data: this.allsearchdata,
           columns: this.columnsName

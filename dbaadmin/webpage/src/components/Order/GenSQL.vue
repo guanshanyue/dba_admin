@@ -105,7 +105,7 @@
     <Row>
       <Card>
         <div class="step-header-con">
-          <h3 style="margin-left: 35%">Yearning SQL平台审核工单</h3>
+          <h3 style="margin-left: 35%">微脉 SQL平台审核工单</h3>
         </div>
         <p class="step-content"></p>
         <Form class="step-form" :label-width="100">
@@ -339,7 +339,7 @@ export default {
         connection_name: '',
         basename: '',
         tablename: '',
-        backup: '0',
+        backup: '1',
         assigned: ''
       },
       id: null,
@@ -398,7 +398,7 @@ export default {
       }
       this.$refs['formItem'].validate((valid) => {
         if (valid) {
-            let tmp = this.formDynamic.replace(/(;|；)$/gi, '').replace(/；/g, ';')
+            let tmp = this.formDynamic.replace(/^#.*$/gm, '').replace(/(;|；)$/gi, '').replace(/；/g, ';')
             axios.put(`${util.url}/sqlsyntax/test`, {
               'id': this.id[0].id,
               'base': this.formItem.basename,

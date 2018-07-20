@@ -2,7 +2,7 @@
         <img width="300" src="http://oy0f4k5qi.bkt.clouddn.com/git_logo2.svg">
 </p>
 
-# Yearning SQL审核平台
+# SQL审核平台
 
 ![](https://img.shields.io/badge/build-release-brightgreen.svg)  
 ![](https://img.shields.io/badge/version-v1.0.0-brightgreen.svg)  
@@ -45,8 +45,6 @@
 
 - Django 2.0
 
-## Install 安装及使用日志
-- [Yearning使用及安装文档](https://cookiey.github.io/Yearning-document/)
 
 - 体验及快速测试(docker)
 
@@ -69,21 +67,7 @@ docker版本不支持e-mail推送及ldap登陆
 由于目前镜像并没有将数据库数据存放目录挂载到宿主机所以不建议在正式环境中使用docker
 
 建议在使用前评估及测试中使用
-## Update 更新日志
-  - [Yearning更新日志](https://cookiey.github.io/Yearning-document/update/)
 
-## Support 支持Yearning
-
-如果Yearning能够帮助到你，请支持下Yearning吧，让Yearning能够持续改善并更新
-
-![](http://oy0f4k5qi.bkt.clouddn.com/alipay.jpg)
-![](http://oy0f4k5qi.bkt.clouddn.com/wechat.jpg)
-  
-## About 联系方式
-   
-   QQ群:103674679
-   
-   E-mail: im@supermancookie.com
 
 ## Snapshot 效果展示
 

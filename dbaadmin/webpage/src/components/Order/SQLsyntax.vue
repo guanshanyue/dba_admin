@@ -112,7 +112,7 @@ export default {
         connection_name: '',
         basename: '',
         text: '',
-        backup: '0',
+        backup: '1',
         assigned: ''
       },
       columnsName: [
@@ -254,7 +254,7 @@ export default {
     },
     test_sql () {
       let ddl = ['select', 'alter', 'drop', 'create']
-      let createtable = this.formItem.textarea.replace(/(;|；)$/gi, '').replace(/\s/g, ' ').replace(/；/g, ';').split(';')
+      let createtable = this.formItem.textarea.replace(/^#.*$/gm, '').replace(/(;|；)$/gi, '').replace(/\s/g, ' ').replace(/；/g, ';').split(';')
       for (let i of createtable) {
         for (let c of ddl) {
           i = i.replace(/(^\s*)|(\s*$)/g, '')
@@ -267,7 +267,7 @@ export default {
       this.$refs['formItem'].validate((valid) => {
         if (valid) {
           if (this.formItem.textarea) {
-            let tmp = this.formItem.textarea.replace(/(;|；)$/gi, '').replace(/；/g, ';')
+            let tmp = this.formItem.textarea.replace(/^#.*$/gm, '').replace(/(;|；)$/gi, '').replace(/；/g, ';')
             axios.put(`${util.url}/sqlsyntax/test`, {
                 'id': this.id[0].id,
                 'base': this.formItem.basename,
@@ -307,7 +307,7 @@ export default {
       this.$refs['formItem'].validate((valid) => {
         if (valid) {
           if (this.formItem.textarea) {
-            this.datalist.sqllist = this.formItem.textarea.replace(/(;|；)$/gi, '').replace(/\s/g, ' ').replace(/；/g, ';').split(';')
+            this.datalist.sqllist = this.formItem.textarea.replace(/^#.*$/gm, '').replace(/(;|；)$/gi, '').replace(/\s/g, ' ').replace(/；/g, ';').split(';')
             axios.post(`${util.url}/sqlsyntax/`, {
                 'data': JSON.stringify(this.formItem),
                 'sql': JSON.stringify(this.datalist.sqllist),
